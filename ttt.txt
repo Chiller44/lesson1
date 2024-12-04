@@ -1,0 +1,10 @@
+FANselect, the selection software for fans from ZIEHL-ABEGG,
+allows you to quickly and conveniently identify the right axial or centrifugal
+fan for your requirements. Each product in FANselect is based on performance data from the
+ZIEHL-ABEGG InVent Technology Centre, known to be the most accurate measurement data in the
+ventilation system sector. The most accurate measurement data combined with a specially
+developed calculation algorithm allows for precise fan selection. After entering your requirements,
+a few mouse clicks take you to a selection of products that are ideally suited to use in your application.
+There is also the option of comparing products on the basis of technical performance and cost. Moreover,
+FANselect is the only selection software for fans in the world that has been certified by TÜV. The TÜV
+certificate for FANselect extends to most of the product portfolio available in FANselect.

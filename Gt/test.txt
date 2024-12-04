@@ -1,0 +1,2 @@
+path = "..\..Gt\test.txt"
+file = open(path, 'r')
