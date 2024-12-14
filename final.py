@@ -1,12 +1,24 @@
-m = [1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-k = []
-print(m)
-i = 0
-while i <= len(m) - 10:
-    print((m[i:10 + i]), sum(m[i:10 + i]), len((m[i:10 + i])))
-    k.append(sum(m[i:10 + i]))
-    i += 1
-print(f'Мінімальна сума 10 чисел починається з {k.index(min(k)) + 1} елементу')
+l =[]
+def list1(l):
+    while True:
+        x = input('Введіть число (для виходу введіть stop): ')
+        if x == 'stop':
+            break
+        l.append(int(x))
+    n = int(input('Введіть N-й елемент: '))
+    try:
+        print(f'Весь список {l}')
+        print(f'Максимальне значення списку {max(l)}')
+        print(f'Мінімальне значення списку {min(l)}')
+        print(f'N-ий елемент списку {l[n]}')
+        del l[n]
+        print(f'Список після видалення n-го елементу {l}')
+    except IndexError:
+        print('N-й елемент більше довжини списку')
+
+list1(l)
+
+
 
 
 
