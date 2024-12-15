@@ -2,14 +2,14 @@ import random
 brands_of_car = {
     'BMW': {'fuel':100, 'strength':100, 'consumption':6},
     'Volvo': {'fuel':75, 'strength':60, 'consumption':8},
-    'ЗАЗ': {'fuel':45, 'strength':100, 'consumption':6}
+    'ЗАЗ': {'fuel':45, 'strength':100, 'consumption':6},
     'Ford': {'fuel':80, 'strength':130, 'consumption':4}
 }
 
 jop_listr = {
     'Java dev': {'salary':50, 'gladness_less':10,},
     'Python dev': {'salary':40, 'gladness_less':3},
-    'Assembler dev': {'salary':1000, 'gladness_less':25}
+    'Assembler dev': {'salary':1000, 'gladness_less':25},
     'Swift dev': {'salary':80, 'gladness_less':2}
 }
 class Human:
