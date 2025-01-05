@@ -28,7 +28,8 @@ class Brebank:
 
     def menu(self):
         choise = int(input(f'{self.first_name}, виберіть дію, яку хочете виконати.\n'
-              f'1 - Перевірка балансу, 2 - Зняття готівки, 3 - Поповнення балансу, 4 - Конвертація коштів, 5 - Вихід: '))
+              f'1 - Перевірка балансу, 2 - Зняття готівки, 3 - Поповнення балансу, 4 - Конвертація коштів,\n'
+                f'5 - Заміна pin кода, 6 - Вихід: '))
         if choise == 1:
             andrii.my_balance()
         if choise == 2:
@@ -38,8 +39,10 @@ class Brebank:
         if choise == 4:
             andrii.convert()
         if choise == 5:
+            andrii.change_pin()
+        if choise == 6:
             andrii.exit()
-        if choise < 1 or choise > 5:
+        if choise < 1 or choise > 6:
             print('Зробіть провильний вибір!')
             andrii.menu()
 
@@ -57,7 +60,7 @@ class Brebank:
             andrii.cont()
         else:
             print(f'{self.first_name}, на Вашому балансі залишилось {self.balance - withdr} гривень.')
-            andrii.cont()
+
 
 
     def deposit(self):
@@ -71,7 +74,8 @@ class Brebank:
         if conv == 1:
             y = float(input(f'{self.first_name}, введіть сумму для конвертаціі: '))
             if y <= self.balance:
-                self.usd = y / 42.01
+                us = y / 42.01
+                self.usd += us
                 self.balance -= y
                 print(f'Конвертація успішна. На Вашому рахунку {round(self.usd, 2)} доларів США.')
                 andrii.cont()
@@ -81,7 +85,8 @@ class Brebank:
         if conv == 2:
             y = float(input(f'{self.first_name}, введіть сумму для конвертаціі: '))
             if y <= self.balance:
-                self.gbp = y / 52.68
+                gb = y / 52.68
+                self.gbp += gb
                 self.balance -= y
                 print(f'Конвертація успішна. На Вашому рахунку {round(self.gbp, 2)} фунтів стерлінгів.')
                 andrii.cont()
@@ -91,7 +96,8 @@ class Brebank:
         if conv == 3:
             y = float(input(f'{self.first_name}, введіть сумму для конвертаціі: '))
             if y <= self.balance:
-                self.euro = y / 43.81
+                eu = y / 43.81
+                self.euro += eu
                 self.balance -= y
                 print(f'Конвертація успішна. На Вашому рахунку {round(self.euro, 2)} євро.')
                 andrii.cont()
@@ -105,13 +111,35 @@ class Brebank:
             andrii.menu()
         if x == 2:
             print(f'{self.first_name}, дякуємо за вибір нашого банку!')
+            exit()
+
+    def change_pin(self):
+        a = 0
+        b = 4
+        while True:
+            old_pin = int(input('Введіть свій pin код: '))
+            if old_pin == self.pin:
+                new_pin = int(input('Введіть новий pin код: '))
+                self.pin = new_pin
+                print('Pin код змінено.')
+                andrii.password()
+            else:
+                a += 1
+                b -= 1
+                print(f'Невірний pin-код. Спробуйте ще раз. У Вас є ще {b - 1} спроби. Потім карта буде заблокована!')
+                if a == 3:
+                    print('Вашу карту заблоковано! Зверніться в банк до Брежнева Андрія!')
+                    break
 
     def exit(self):
         print(f'{self.first_name}, дякуємо за вибір нашого банку!')
 
 
 
+
 andrii = Brebank('Andrii', "Brezhnev", 48, '+380671659558', 1111, 0)
 andrii.password()
+
+
 
 
