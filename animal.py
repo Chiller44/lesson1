@@ -1,29 +1,37 @@
 class Animal:
-    def __init__(self, male, year):
-        self.male = male
-        self.year = year
+    def __init__(self, name):
+        self.name = name
 
-    def animal_info(self):
-        print(f'Animal: {self.male}, {self.year}')
+    def eat(self):
+        print(f'{self.name} is eating')
 
-class Human(Animal):
-    def __init__(self, male, year, wight):
-        super().__init__(male, year)
-        self.wight = wight
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def bark(self):
+        print(f'Dog {self.name} is barking')
+
+class Cat(Animal):
+
+    def meow(self):
+        print(f'{self.name} says meow')
 
 
-    def human_info(self):
-        print(f'{self.wight}')
+class Frog(Animal):
 
-    def human_animal(self):
-        print(f'{self.year}')
+    def eat(self):
+        print(f'Frog {self.name} is eating')
 
+dog = Dog("Jack", 'colli')
+cat = Cat('Tom')
+frog = Frog('Green')
 
-lion = Animal('predator', 2000)
-andrii = Human('human', 1976,90)
-
-lion.animal_info()
-andrii.human_info()
-andrii.animal_info()
+dog.bark()
+dog.eat()
+dog.breed
+cat.meow()
+frog.eat()
 
 
