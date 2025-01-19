@@ -1,3 +1,4 @@
+import os
 
 class People:
     def __init__(self, name, birthday, phone, city, country):
@@ -16,6 +17,8 @@ class People:
 p1 = People('Bob', 2024, '+1111', 'Kiyv', 'Ukraine')
 p1.inPut()
 
+user = os.getlogin()
+print(user)
 
 
 

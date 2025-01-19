@@ -1,22 +1,19 @@
+from tkinter import *
 
-symbol = input('Введіть символ для лінії: ')
-length_of_line = int(input('Введіть довжину лінії: '))
-type_of_line = int(input('Який тип лінії: 1 - горизонтальна, 2 - вертикальна: '))
 
-def show_line(symbol, function_to_call):
-    draw = function_to_call(symbol)
-    return draw
+def click_button(text):
+    label.config(text="Button {}".format(text))
 
-def function_to_call(symbol, type_of_line):
-    if type_of_line == 2:
-        for i in range(length_of_line):
-            print(symbol)
-    elif type_of_line == 1:
-        for i in range(length_of_line):
-            print(symbol, end=" ")
-    else:
-        print('Зробіть правильний вібір!')
 
-function_to_call(symbol, type_of_line)
+root = Tk()
+root.title('"HOME WORK"')
 
-#show_line(symbol, function_to_call)
+button = Button(text="button 1", command=lambda: click_button(1)).grid(row=2, column=1)
+button1 = Button(text="button 2", command=lambda: click_button(2)).grid(row=2, column=2)
+button2 = Button(text="button 3", command=lambda: click_button(3)).grid(row=2, column=3)
+
+label = Label(text="Position 1 ", bg="yellow", fg="red", width=10, height=5)
+
+label.grid(row=1, column=1)
+
+root.mainloop()
