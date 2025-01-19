@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 root = Tk()
-root.title('Простейшее окно')
+root.title('Просте вікно')
 root.geometry('500x250')
 
 
