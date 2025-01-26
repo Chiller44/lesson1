@@ -1,34 +1,25 @@
-import random
+from tkinter import *
+from tkinter import ttk
 
-m = []
-n = []
-new = []
-for _ in range(5):
-    m.append(random.randint(1, 100))
-for _ in range(7):
-    n.append(random.randint(-3, 3))
-print(m)
-print (n)
+from Classwork_20_01_25 import show_message
+from help import button
+
+root = Tk()
+root.title('It step')
+root.geometry('250x250')
+
+def click_btn():
+    lable['text'] = button.get(['text'])
 
 
-def proste(m):
-    l = []
-    j = 0
-    for i in m:
-        k = 0
-        x = 1
-        while x <= i:
-            if i % x == 0:
-                k += 1
-            x += 1
-        if k == 2:
-            j += 1
-            l.append(i)
+btn = ttk.Button(text='text', command=click_btn)
+btn.pack()
 
-    print(f'Вивів ще новий список з простими чмслами: {l}')
-    print(f'Простих чисел {j}')
+lable = ttk.Label()
+lable.pack()
 
-proste(m)
+
+root.mainloop()
 
 
 
