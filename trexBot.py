@@ -3,6 +3,7 @@ import pyautogui
 from numpy import *
 import time
 
+
 #643 697 - restartbtn
 #292 705 - dino
 
@@ -29,15 +30,13 @@ class DinoBot:
     def start(self):
         self.restartgame()
         while True:
-            if self.restartgame() != 1447:
-                self.jump()
             print(self.grabImage()) #1477 white
 
 
 
 
 def main():
-    bot = DinoBot((407, 655), (114, 672))
+    bot = DinoBot((643, 697), (292, 705))
     bot.start()
 
 if __name__ == "__main__":
