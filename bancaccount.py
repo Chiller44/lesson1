@@ -142,5 +142,5 @@ o5 = PremiumAccount('Катерина', 20000)
 
 o3.deposit(5000)
 o3.withdraw([1000, 2000])
-o3.transfer(2000)
+o3.transfer(2000, o5)
 o3.get_account_info(False, True)

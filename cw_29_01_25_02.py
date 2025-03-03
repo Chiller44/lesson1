@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 
-from entrybin import message
+
 
 HEIGHT = 600
 WIDTH = 600
@@ -105,5 +105,15 @@ btn_exit.place(rely=0.85, relwidth=0.25)
 
 lisbox = Listbox(frame)
 lisbox.place(relx=0.3, rely=0.25, relwidth=0.6, relheight=0.67)
+
+menu = Menu(root)
+root.config(menu=menu)
+
+file_menu = Menu(menu, tearoff=0)
+file_menu.add_command(label='New')
+file_menu.add_command(label='My menu')
+file_menu.add_command(label='Exit', command=exit)
+
+menu.add_cascade(label='File', menu=file_menu)
 
 root.mainloop()
